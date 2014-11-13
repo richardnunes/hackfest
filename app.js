@@ -7,9 +7,13 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var user = require('./routes/user');
+var sendDonation = require('./routes/sendDonation');
+var createChallenge = require('./routes/createChallenge');
+var createChallengeSuccess = require('./routes/createChallengeSuccess');
+var handleNewToken = require('./routes/handleNewToken');
+var sendDonationSuccess = require('./routes/sendDonationSuccess');
 
 var app = express();
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -24,6 +28,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/user', user);
+app.use('/sendDonation', sendDonation);
+app.use('/createChallenge', createChallenge);
+app.use('/createChallengeSuccess', createChallengeSuccess);
+app.use('/sendDonationSuccess', sendDonationSuccess);
+app.use('/sendDonationFailure', sendDonationSuccess);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
