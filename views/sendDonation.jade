@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    .row
+        .col-md-12
+            .row
+                .col-md-4.col-md-offset-4
+                    .text-center.green-text.login-title FUNdRun
+                    form(role="form")
+                        .form-group
+                            h4.login-description.text-center Are you sure you want to send payment?
+                            h4.login-description.text-center £3,000
+                            a(href="/user", role="button").btn.btn-primary.btn-lg.login-button Cancel
+                            a(role="button" , href="/sendDonationSuccess").btn.btn-primary.btn-lg.login-button Send Donation
+                            
