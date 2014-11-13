@@ -1,0 +1,51 @@
+extends layout
+
+block content
+    .row
+        .col-md-12
+            .row
+                .col-md-4.col-md-offset-4
+                    .text-center.green-text.login-title FUNdRun
+                    form(id="simplify-payment-form", action="/handleNewToken", method="POST", role="form")
+                        .form-group
+                            select(id="charity").text-center.center-block.form-control
+                                    option( value="01") British Heart Foundation
+                                    option( value="02") NSPCC
+                                    option( value="03") RSPB
+                            input(id="donation-amount" placeholder="Donation amount").text-center.center-block.form-control
+                        .form-group
+                            input(id="cc-number" placeholder="Credit Card Number").text-center.center-block.form-control
+                        .form-group
+                            input(id="cc-cvc" placeholder="CVC", type="text").text-center.center-block.form-control
+                        .form-group
+                            
+                            select(id="cc-exp-month").text-center.center-block.form-control
+                                option( value="01") Jan
+                                option( value="02") Feb
+                                option( value="03") Mar
+                                option( value="04") Apr
+                                option( value="05") May
+                                option( value="06") Jun
+                                option( value="07") Jul
+                                option( value="08") Aug
+                                option( value="09") Sep
+                                option( value="10") Oct
+                                option( value="11") Nov
+                                option( value="12") Dec
+                            select(id="cc-exp-year").text-center.center-block.form-control
+                                option(value="13") 2013
+                                option(value="14") 2014
+                                option(value="15") 2015
+                                option(value="16") 2016
+                                option(value="17") 2017
+                                option(value="18") 2018
+                                option(value="19") 2019
+                                option(value="20") 2020
+                                option(value="21") 2021
+                                option(value="22") 2022
+                        .form-group
+                            a(href="/user", role="button" ).btn.btn-primary.btn-lg.login-button Cancel
+                            a(role="button" , onClick = "createToken();" ).btn.btn-primary.btn-lg.login-button Start challenge
+                            
+                                
+                            

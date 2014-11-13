@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    .row
+        .col-md-12
+            .row
+                .col-md-4.col-md-offset-4
+                    .text-center.green-text.login-title FUNdRun
+                    form(role="form" )
+                        
+                        .form-group
+                            h4.login-description.text-center Congratulations! You successfully created a new challenge.
+                            a(href="/user", role="button" , onClick = "createToken();" ).btn.btn-primary.btn-lg.login-button Close
+                            
+                                
+                            
